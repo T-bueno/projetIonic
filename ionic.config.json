@@ -1,0 +1,7 @@
+{
+  "name": "IFMinterim",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
