@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Service} from '../service';
 
 @Component({
   selector: 'app-tabs',
-  templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss']
+  templateUrl: './tabs.page.html',
+  styleUrls: ['./tabs.page.scss']
 })
 export class TabsPage {
 
-  constructor() {}
+  public id: number;
+
+  constructor(public activatedRoute: ActivatedRoute) {
+    var varGet = this.activatedRoute.snapshot.paramMap.get('nomVariable');
+  }
 
 }
