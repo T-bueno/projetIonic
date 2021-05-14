@@ -1,0 +1,57 @@
+<ion-header color="light">
+  <ion-card-header>
+    <ion-card-title>Profil</ion-card-title>
+  </ion-card-header>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-item>
+  <ion-icon name="person-circle-outline" size="large"></ion-icon>
+  <ion-button color="medium">Choisir une photo</ion-button>
+  <ion-input placeholder="Vide"></ion-input>
+</ion-item>
+
+<ion-item >
+  <ion-label position="floating">Nom:</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Prénom:</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Ville:</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Email:</ion-label>
+  <ion-input type="mail"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Téléphone:</ion-label>
+  <ion-input type="number"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Emploi rechercher:</ion-label>
+  <ion-input placeholder="Emploi rechercher"></ion-input>
+  <ion-input placeholder="Type de contrat"></ion-input>
+  <ion-input placeholder="Localisation"></ion-input>
+  <ion-input placeholder="Rayon"></ion-input>
+  <ion-input placeholder="Disponibilité"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-icon name="reader-outline"></ion-icon>
+  <ion-button color="medium">Votre CV</ion-button>
+  <ion-input placeholder="Vide"></ion-input>
+</ion-item>
+
+<ion-button expand="block" type="submit" color="success">Enregistrer</ion-button>
+</ion-content>
