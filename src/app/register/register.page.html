@@ -1,0 +1,25 @@
+<ion-header >
+  <ion-item color="primary">
+   <ion-icon slot="start" name="backspace" (click)="goToLogin()"></ion-icon>
+   <ion-card-title color="light">Inscription</ion-card-title>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">E-mail de connexion</ion-label>
+    <ion-input type="email" [(ngModel)]="user.email" [(ngModel)]="profil.email"required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Mot de passe</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Confirmer le mot de passe</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password" required></ion-input>
+  </ion-item>
+
+  <ion-button color="success" expand="full" (click)="createProfil(profil)" (click)="register(user)"> REGISTER </ion-button>
+</ion-content>
