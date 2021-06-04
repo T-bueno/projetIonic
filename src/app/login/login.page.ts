@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { User } from "../models/user.model";
-// After Driss As
 import { Router } from '@angular/router';
-//
 import {
   ToastController,
   LoadingController,
@@ -21,7 +19,6 @@ export class LoginPage implements OnInit {
   subscription: any;
 
 
-  //By Driss As
   dataUser = {
     email: '',
     password: ''
@@ -31,8 +28,6 @@ export class LoginPage implements OnInit {
   email = '';
   userId = '';
   method = '';
-
-  //
 
   constructor(
     public router: Router,
@@ -99,18 +94,6 @@ export class LoginPage implements OnInit {
       loader.dismiss();
     }
   }
-  
-
- //By Driss AS
- /*
-  login() {
-    this.afAuth.signInWithEmailAndPassword(this.dataUser.email, this.dataUser.password);
-     this.dataUser = {
-       email: '',
-       password: ''
-     };
-  }
-  */
 
   signUp() {
     this.afAuth.createUserWithEmailAndPassword(this.dataUser.email, this.dataUser.password);
@@ -124,9 +107,6 @@ export class LoginPage implements OnInit {
   this.router.navigate(['menu']);
 }
 
-
-  
-  //
 
   formValidation() {
     if (!this.user.email) {
