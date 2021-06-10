@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-searchbar mode="md" color="light" placeholder="Rechercher une offre" (ionInput)="searchInList($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+      <ion-label>
+        <p>1XX XXX profils</p>
+      </ion-label>
+
+    <ion-item-sliding *ngFor="let post of searchedItem">
+      <ion-item class="no-padding" [routerLink]="['/tabs/detail-offer/', post.id]">
+        <ion-avatar slot="start">
+          <img src="./assets/icon/favicon.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ post.title }}</h2>
+          <h3>{{ post.details }}</h3>
+          <p>Un exemple de paragraphe</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="start">
+        <ion-item-option color="danger">
+          <!--
+          <ion-icon *ngIf="!post.liked" (click)="addLike(post)" slot="end" name="thumbs-up"></ion-icon>
+          <ion-icon *ngIf="post.liked" (click)="removeLike(post)" slot="end" color="primary" name="thumbs-up"></ion-icon>
+          -->
+          <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>  
+    </ion-item-sliding>
+  </ion-list>

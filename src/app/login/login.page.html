@@ -1,0 +1,57 @@
+<div *ngIf="!connected">
+  <!-- À afficher si l'utilisateur n'est pas connecté -->
+
+    <img src="../assets/icon/home.png" class="ion-padding">
+  
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" shape="round" type="submit" (click)="login()">Login</ion-button>
+    
+    
+    <div style="text-align: center;">
+      <p>Don't have account ? Register <a [routerLink]="['/register']"> Here!</a></p>
+      <p> <a [routerLink]="['/forgot-password']">Forgot Password</a></p>
+    </div>
+</div>
+
+<div *ngIf="connected">
+  <!-- Si l'utilisateur est connecté -->
+  <img src="../assets/icon/home.png">
+  
+  <ion-content>
+
+    <ion-item>
+      <ion-label>
+        <p>Méthode de connexion</p>
+        <h2><b>email and {{ method }}</b></h2>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>
+        <p>Identifiant</p>
+        <h2><b>{{ userId }}</b></h2>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>
+        <p>Adresse email</p>
+        <h2><b>{{ email }}</b></h2>
+      </ion-label>
+    </ion-item>
+    <section>
+      <!-- <ion-button expand="full" color="primary" (click)="goToTab1()">Consulter nos offres</ion-button> -->
+      <ion-button expand="full" color="primary" (click)="goToTab1()">Consulter nos offres</ion-button>
+      
+    </section>
+  </ion-content>
+  
+</div>
