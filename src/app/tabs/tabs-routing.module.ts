@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../guards/auth.guard';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -8,27 +9,39 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'offer',
+        loadChildren: () => import('../tab1-offer/tab1-offer.module').then(m => m.Tab1OfferPageModule),
+        canActivate: [AuthGuard]
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'application',
+        loadChildren: () => import('../tab2-application/tab2-application.module').then(m => m.Tab2ApplicationPageModule),
+        canActivate: [AuthGuard]
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'favorite',
+        loadChildren: () => import('../tab3-favorite/tab3-favorite.module').then(m => m.Tab3FavoritePageModule),
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('../tab4-profile/tab4-profile.module').then( m => m.Tab4ProfilePageModule),
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'detail-offer/:id',
+        loadChildren: () => import('../detail-offer/detail-offer.module').then( m => m.DetailOfferPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/offer',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/offer',
     pathMatch: 'full'
   }
 ];
