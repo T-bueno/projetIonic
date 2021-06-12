@@ -1,0 +1,32 @@
+ion-toolbar{
+  background-color: #d34b4b;
+}
+
+div{
+  background-color : grey;
+  color : white;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+h2{
+  font-weight: bold;
+}
+
+h3{
+  color : grey;
+}
+
+p{
+  text-transform: uppercase;
+}
+
+#icone{
+  font-size: 50px;
+}
+
+#icone:hover{
+  color : blue;
+  cursor:pointer;
+}
