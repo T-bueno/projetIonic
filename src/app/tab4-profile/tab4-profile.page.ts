@@ -5,6 +5,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +38,8 @@ export class Tab4ProfilePage implements OnInit
     private toastr: ToastController,
     public afSG: AngularFireStorage,
     private camera: Camera,
-    private router: Router
+    private router: Router,
+    public afAuth: AngularFireAuth,
   ) { }
 
   ngOnInit() 
