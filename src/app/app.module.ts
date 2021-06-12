@@ -27,6 +27,9 @@ import { AuthService } from './services/auth.service';
 //AUTH GUARD
 import { AuthGuard } from './guards/auth.guard';
 
+//CAMERA
+import { Camera } from '@ionic-native/camera/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -46,6 +49,7 @@ import { AuthGuard } from './guards/auth.guard';
     //SplashScreen,
     AuthService,
     AuthGuard,
+    Camera,
     { 
     provide: RouteReuseStrategy,
     useClass: IonicRouteStrategy 
