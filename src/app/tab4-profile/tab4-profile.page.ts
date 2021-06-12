@@ -120,8 +120,8 @@ export class Tab4ProfilePage implements OnInit
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      targetWidth: 1000,
-      targetHeight: 1000,
+      targetWidth: 500,
+      targetHeight: 500,
       sourceType: this.camera.PictureSourceType.CAMERA
     };
     return await this.camera.getPicture(options);
