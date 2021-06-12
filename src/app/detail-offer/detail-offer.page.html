@@ -15,7 +15,7 @@
       <p>{{ posts.entreprise }}</p>
       <p>{{ posts.adresse }}</p>
     </ion-label>
-    <ion-icon  (click)="favorite()" name="heart-outline"></ion-icon>
+    <ion-icon color="{{button.color}}" name="{{button.name}}" (click)="addToFavorite()" (click)="favorite()"></ion-icon>
   </ion-item>
 
   <ion-card-content>

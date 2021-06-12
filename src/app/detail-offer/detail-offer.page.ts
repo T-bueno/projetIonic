@@ -28,6 +28,7 @@ export class DetailOfferPage implements OnInit {
   adresse: string;
   entreprise: string;
   posteId: string;
+  public button: any = {color: 'medium', name:'heart-outline'};
 
   constructor(
     private auth: AuthService,
@@ -166,6 +167,19 @@ export class DetailOfferPage implements OnInit {
 
     });
 
+}
+
+addToFavorite(){
+  console.log(this.button.color);
+  if (this.button.color == 'medium'){
+    console.log("Je suis le IF");
+    this.button.color = 'primary';
+    this.button.name = 'heart';
+  }else {
+    this.button.color = 'medium';
+    this.button.name = 'heart-outline';
+  }
+  console.log(this.button.color);
 }
 
 }
