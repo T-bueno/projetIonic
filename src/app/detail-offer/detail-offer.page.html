@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-searchbar mode="md" placeholder="Rechercher une offre"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="../assets/icon/favicon.png">
+    </ion-avatar>
+    <ion-label>
+      <h3>{{ posts.poste }}</h3>
+      <p>{{ posts.entreprise }}</p>
+      <p>{{ posts.adresse }}</p>
+    </ion-label>
+    <ion-icon  (click)="favorite()" name="heart-outline"></ion-icon>
+  </ion-item>
+
+  <ion-card-content>
+
+    <ion-card-subtitle>Présentation :</ion-card-subtitle>
+
+    
+      <p>{{ posts.libelle_presentation }}</p>
+  
+
+    <ion-card-subtitle>Activité :</ion-card-subtitle>
+
+      <p>{{ posts.libelle_activite }}</p>
+
+    <ion-card-subtitle>Sur le poste :</ion-card-subtitle>
+
+      <p>{{ posts.libelle_poste }}</p>
+  </ion-card-content>
+
+  <ion-button expand="block" type="submit" color="primary" (click)="candidature()">POSTULER A L'OFFRE</ion-button>
+
+
+
+
+
+</ion-content>
