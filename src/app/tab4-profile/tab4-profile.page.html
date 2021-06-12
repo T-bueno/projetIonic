@@ -9,9 +9,20 @@
 <ion-content [fullscreen]="true">
 
 <ion-item>
-  <ion-icon name="person-circle-outline" size="large"></ion-icon>
-  <ion-button color="medium">Choisir une photo</ion-button>
-  <ion-input placeholder="Vide"></ion-input>
+  <ion-label position="stacked">Votre photo</ion-label>
+  <div class="flex">
+    <div class="img-box">
+      <img [src]="image">
+    </div>
+  </div>
+  <ion-button (click)="addPhoto('library')" color="tertiary" expand="block">
+    <ion-icon name="image" slot="start"></ion-icon>
+    Ouvrir la bibliothèque
+  </ion-button>
+  <ion-button (click)="addPhoto('camera')" color="secondary" expand="block">
+    <ion-icon name="camera" slot="start"></ion-icon>
+    Prendre une photo
+  </ion-button>
 </ion-item>
 
 <ion-item >
@@ -56,11 +67,9 @@
   <ion-label position="stacked"> Disponibilité </ion-label>
   <ion-input required type="text" [(ngModel)]="dispo" name="dispo"> </ion-input>
 </ion-item>
-
 <ion-item>
-  <ion-icon name="reader-outline"></ion-icon>
-  <ion-button color="medium">Votre CV</ion-button>
-  <ion-input placeholder="Vide"></ion-input>
+  <ion-label position="stacked">Votre CV :</ion-label>
+  <ion-input type="file" placeholder="Vide"></ion-input>
 </ion-item>
 
 
