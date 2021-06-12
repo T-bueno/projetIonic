@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-searchbar mode="md" color="light" placeholder="Rechercher une offre" (ionInput)="searchInList($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-label>
+      <p>{{ this.count }} offres</p>
+    </ion-label>
+
+    <ion-item-sliding *ngFor="let entreprise of searchedItem">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="{{ entreprise.photo }}">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ entreprise.nom }}</h2>
+          <h3>{{ entreprise.poste }}</h3>
+          <p>{{ entreprise.codepostal + " " + entreprise.adresse }}</p>
+        </ion-label>
+        <ion-icon id="icone" name="chevron-forward-outline"  [routerLink]="['/tabs/detail-offer/', entreprise.id]"></ion-icon>
+      </ion-item>
+
+      <ion-item-options side="start">
+        <ion-item-option color="danger">
+          <!--
+          <ion-icon *ngIf="!post.liked" (click)="addLike(post)" slot="end" name="thumbs-up"></ion-icon>
+          <ion-icon *ngIf="post.liked" (click)="removeLike(post)" slot="end" color="primary" name="thumbs-up"></ion-icon>
+          -->
+          <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
