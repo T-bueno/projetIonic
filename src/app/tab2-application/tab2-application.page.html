@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-searchbar mode="md" placeholder="Rechercher une candidature"></ion-searchbar>
+    <ion-searchbar mode="md" placeholder="Rechercher une candidature" (ionInput)="searchInList($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
     </ion-label>
 
   <ion-item-sliding *ngFor="let candidature of searchedItem">
-    <ion-item class="no-padding" [routerLink]="['/tabs/detail-offer/', candidature.id]">
+    <ion-item class="no-padding" [routerLink]="['/tabs/detail-offer/', candidature.postId]">
       <ion-avatar slot="start">
         <img src="./assets/icon/favicon.png">
       </ion-avatar>

@@ -27,6 +27,7 @@ export class DetailOfferPage implements OnInit {
   poste: string;
   adresse: string;
   entreprise: string;
+  posteId: string;
 
   constructor(
     private auth: AuthService,
@@ -70,6 +71,7 @@ export class DetailOfferPage implements OnInit {
         this.posts.libelle_activite = data["libelle_activite"];
         this.posts.libelle_presentation = data["libelle_presentation"];
         this.posts.libelle_poste = data["libelle_poste"];
+        this.posts.postId = data["posteId"];
 
         // dismiss loader
         loader.dismiss();
@@ -132,7 +134,8 @@ export class DetailOfferPage implements OnInit {
           poste: this.posts.poste,
           entreprise: this.posts.entreprise,
           adresse: this.posts.adresse,
-          userId: this.userId
+          userId: this.userId,
+          postId: this.id
 
     });
     

@@ -5,4 +5,5 @@ export interface Post {
     libelle_activite: string;
     libelle_presentation: string;
     libelle_poste: string;
+    postId: string;
   }

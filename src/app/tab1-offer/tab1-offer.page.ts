@@ -61,6 +61,7 @@ export class Tab1OfferPage {
 
           // dismiss loader
           loader.dismiss();
+          this.searchedItem = this.posts;
         });
     } catch (e) {
       this.showToast(e);
