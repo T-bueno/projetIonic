@@ -80,11 +80,9 @@ export class Tab2ApplicationPage {
           loader.dismiss();
 
         this.searchedItem = this.filterInList();
-        this.searchedItem = this.userItem;
-
         //this.searchedItem = this.candidatures[0].userId;
         //db.collection('candidature').doc(this.userId).get();
-        
+        console.log('return de la fonction dans getCandid' + this.filterInList());
         });
         }
     } catch (e) {
